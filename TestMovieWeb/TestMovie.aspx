@@ -69,7 +69,7 @@
 
         <div class="row bg-1" style="text-align: Left;">
             <div class="col-md-4">
-                <img src="https://image.tmdb.org/t/p/w780<%=j["poster_path"] %>" class="img-responsive" alt="Cinque Terre" style="align-content: center;">
+                <img src="https://image.tmdb.org/t/p/w780<%=j["poster_path"] %>" class="img-responsive" style="align-content: center;padding: 30px 0px 0px">
             </div>
             <div class="col-md-8" style="padding: -10px 0px 0px 0px">
                 <h2 style="text-align: center; color: blue"><%=j["title"] %></h2>
