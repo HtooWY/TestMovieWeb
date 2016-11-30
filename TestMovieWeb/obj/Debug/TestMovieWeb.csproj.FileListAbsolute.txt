@@ -7,6 +7,6 @@ C:\Users\Wai Yan\Documents\Visual Studio 2013\Projects\TestMovieWeb\TestMovieWeb
 C:\Users\Wai Yan\Documents\Visual Studio 2013\Projects\TestMovieWeb\TestMovieWeb\bin\Facebook.xml
 C:\Users\Wai Yan\Documents\Visual Studio 2013\Projects\TestMovieWeb\TestMovieWeb\bin\Newtonsoft.Json.xml
 C:\Users\Wai Yan\Documents\Visual Studio 2013\Projects\TestMovieWeb\TestMovieWeb\bin\RestSharp.xml
-C:\Users\Wai Yan\Documents\Visual Studio 2013\Projects\TestMovieWeb\TestMovieWeb\obj\Debug\TestMovieWeb.csprojResolveAssemblyReference.cache
 C:\Users\Wai Yan\Documents\Visual Studio 2013\Projects\TestMovieWeb\TestMovieWeb\obj\Debug\TestMovieWeb.dll
 C:\Users\Wai Yan\Documents\Visual Studio 2013\Projects\TestMovieWeb\TestMovieWeb\obj\Debug\TestMovieWeb.pdb
+C:\Users\Wai Yan\documents\visual studio 2013\Projects\TestMovieWeb\TestMovieWeb\obj\Debug\TestMovieWeb.csprojResolveAssemblyReference.cache
