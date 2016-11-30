@@ -103,21 +103,6 @@
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jquery.colorbox-min.js" />
     <Content Include="Scripts\jquery.colorbox.js" />
-    <Content Include="source\blank.gif" />
-    <Content Include="source\fancybox_loading%402x.gif" />
-    <Content Include="source\fancybox_loading.gif" />
-    <Content Include="source\fancybox_overlay.png" />
-    <Content Include="source\fancybox_sprite%402x.png" />
-    <Content Include="source\fancybox_sprite.png" />
-    <Content Include="source\helpers\fancybox_buttons.png" />
-    <Content Include="source\helpers\jquery.fancybox-buttons.css" />
-    <Content Include="source\helpers\jquery.fancybox-buttons.js" />
-    <Content Include="source\helpers\jquery.fancybox-media.js" />
-    <Content Include="source\helpers\jquery.fancybox-thumbs.css" />
-    <Content Include="source\helpers\jquery.fancybox-thumbs.js" />
-    <Content Include="source\jquery.fancybox.css" />
-    <Content Include="source\jquery.fancybox.js" />
-    <Content Include="source\jquery.fancybox.pack.js" />
     <Content Include="TestMovie.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

@@ -40,10 +40,10 @@ namespace TestMovieWeb
         const string perm_access_token = "EAADABUITz88BADhfSXZCvMonwW0tXWVMN8NZCvot1NefPgaJGzmU9RwudaNR2ls8M2MoZAM51LJ4nlwZBaNZCQn7eSatrFYbM23tNmgCfwySdkwXeND2sk2EiyrgxeHKiZAhVLwl45iWHXhge1uo8RuAIWc8GJVwEU4jQrPN08BAZDZD";
 
         // get the synopsis, video url, title of the movie
-        public static JToken GetJson()
+        public static JToken GetJson(String req)
         {   
             // Get the upcoming movies
-            var client = new RestClient("https://api.themoviedb.org/3/movie/upcoming?language=en-US&api_key=" + apikey+"&page=1");
+            var client = new RestClient("https://api.themoviedb.org/3/movie/"+req+"?language=en-US&api_key=" + apikey+"&page=1");
             var request = new RestRequest(Method.GET);
             request.AddParameter("undefined", "{}", ParameterType.RequestBody);
             IRestResponse response = client.Execute(request);
@@ -79,13 +79,10 @@ namespace TestMovieWeb
                 
                 j["videourl"] = video_key;
             }
-            
-
-            
-
-            
-            
+             
         }
+
+
 
         // Get page access token
         // this will return short-lived(2 hrs) page access token

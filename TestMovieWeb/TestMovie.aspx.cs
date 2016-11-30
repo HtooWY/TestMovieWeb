@@ -13,17 +13,16 @@ using System.Web;
 using System.Web.UI.WebControls;
 using RestSharp;
 
-
-
 namespace TestMovieWeb
 {
     public partial class TestMovie : System.Web.UI.Page
     {
         private string overview="";
-        private string videourl= "";
         private JToken json = null;
+        private JToken popularjson = null;
         public string Overview { get { return overview; } }
         public JToken Jtoken { get { return json; } }
+        public JToken popular { get { return popularjson; } }
         
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -34,22 +33,25 @@ namespace TestMovieWeb
                 DatabaseQuery.CreateDb();
                 //DatabaseQuery.CreateTable(GetJson());
             }
-            JToken json = null;
+            JToken upcoming = null;
+            JToken popular = null;
 
-
-            if (!JToken.DeepEquals(json, Program.GetJson()))
+            if (!JToken.DeepEquals(upcoming, Program.GetJson("upcoming")))
             {
-
-                json = Program.GetJson();
-                Program.GetInfo(json);
-                this.json = json;
+                upcoming = Program.GetJson("upcoming");
+                Program.GetInfo(upcoming);
+                this.json = upcoming;
                 foreach (JToken j in json)
                 {
                     DatabaseQuery.UpdateTable(j);
                 }
             }
+
+            // Get popular movies
+            popular = Program.GetJson("popular");
+            Program.GetInfo(popular);
+            this.popularjson = popular; 
+
         }
-
-
     }
 }
