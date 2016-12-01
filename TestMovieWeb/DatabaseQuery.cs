@@ -25,11 +25,11 @@ namespace TestMovieWeb
                 {
                     myConn.Open();
                     myCommand.ExecuteNonQuery();
-                    
+
                 }
                 catch (System.Exception ex)
                 {
-                    
+
                 }
                 finally
                 {
@@ -66,11 +66,11 @@ namespace TestMovieWeb
                 {
                     myConn.Open();
                     myCommand.ExecuteNonQuery();
-                    
+
                 }
                 catch (System.Exception ex)
                 {
-                    
+
                 }
                 finally
                 {
@@ -94,9 +94,10 @@ namespace TestMovieWeb
             query = "INSERT INTO Movie VALUES(";
             foreach (String k in keylist)
             {
-                query += "'"+json[k].ToString() + "'";
+                query += "'" + json[k].ToString() + "'";
                 int i = keylist.IndexOf(k);
-                if (i != keylist.Count-1){
+                if (i != keylist.Count - 1)
+                {
                     query += ",";
                 }
             }
@@ -116,7 +117,7 @@ namespace TestMovieWeb
 
                 catch (System.Exception ex)
                 {
-                    
+
                 }
                 finally
                 {
@@ -128,5 +129,4 @@ namespace TestMovieWeb
             }
         }
     }
-
 }

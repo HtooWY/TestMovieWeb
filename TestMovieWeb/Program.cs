@@ -19,7 +19,7 @@ namespace TestMovieWeb
     {
         // themoviedb API key
         static string apikey = "cb44a0858d07d72908cb02677d4f901a";
-        
+
         // facebook movieware page id
         static string fb_pgid = "958521567572809";
 
@@ -34,21 +34,21 @@ namespace TestMovieWeb
         // this user access token can only be generated in Graph API Explorer
         // Check https://developers.facebook.com/tools/explorer/
         const string fb_appAccessToken = "EAADABUITz88BANAC89k4UWvk5dsMaPmSmFPFNLTKbIa89ReqJrsc6tibm4N90ytZBadbvdYVyZBCn0fy3ZAmWhEHOASW1cIBfuToO6w0rZBGvxMl2Iillqz3FRZASWG9I7q1iERDciluLn2z3aP8Wjq4MRjtI1QVaUZBlKSidWtQZDZD";
-        
+
         // This is permanent page access token to the page
         // I used this directly to post to facebook
         const string perm_access_token = "EAADABUITz88BADhfSXZCvMonwW0tXWVMN8NZCvot1NefPgaJGzmU9RwudaNR2ls8M2MoZAM51LJ4nlwZBaNZCQn7eSatrFYbM23tNmgCfwySdkwXeND2sk2EiyrgxeHKiZAhVLwl45iWHXhge1uo8RuAIWc8GJVwEU4jQrPN08BAZDZD";
 
         // get the synopsis, video url, title of the movie
         public static JToken GetJson(String req)
-        {   
+        {
             // Get the upcoming movies
-            var client = new RestClient("https://api.themoviedb.org/3/movie/"+req+"?language=en-US&api_key=" + apikey+"&page=1");
+            var client = new RestClient("https://api.themoviedb.org/3/movie/" + req + "?language=en-US&api_key=" + apikey + "&page=1");
             var request = new RestRequest(Method.GET);
             request.AddParameter("undefined", "{}", ParameterType.RequestBody);
             IRestResponse response = client.Execute(request);
             JToken jsonlist = JToken.Parse(response.Content);
-            return jsonlist["results"];            
+            return jsonlist["results"];
         }
 
         // Extract information as string from json
@@ -59,7 +59,6 @@ namespace TestMovieWeb
                 var title = j["title"].ToString();
                 var overview = j["overview"].ToString();
                 var id = j["id"].ToString();
-
 
                 // Get youtube video link
                 var client = new RestClient("https://api.themoviedb.org/3/movie/" + id + "/videos?language=en-US&api_key=" + apikey);
@@ -76,13 +75,11 @@ namespace TestMovieWeb
                 {
                     video_key = "";
                 }
-                
+
                 j["videourl"] = video_key;
             }
-             
+
         }
-
-
 
         // Get page access token
         // this will return short-lived(2 hrs) page access token
@@ -119,9 +116,7 @@ namespace TestMovieWeb
             messagePost.message = message;
             messagePost.link = link;
 
-            var result = fb.Post("/"+pageId+"/feed", messagePost);
+            var result = fb.Post("/" + pageId + "/feed", messagePost);
         }
-
-       
     }
 }

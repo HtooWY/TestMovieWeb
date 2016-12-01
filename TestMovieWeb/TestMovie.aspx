@@ -30,10 +30,12 @@
             jQuery(".youtube").colorbox({ iframe: true, innerWidth: 640, innerHeight: 390 });
             jQuery(".inline").colorbox({ inline: true, width: "50%" });
         });
-
     </script>
+    <%--background--%>
     <div class="container-fluid bg-1">
+        <%--second white bachground--%>
         <div class="bg-white">
+            <%--navigation bar--%>
             <nav class="navbar navbar-inverse nomargin">
                 <div class="container-fluid nomargin">
                     <div class="navbar-header">
@@ -53,9 +55,10 @@
                     </div>
                     <!--/.nav-collapse -->
                 </div>
-            </nav>
+            </nav> <%--wrap navigation bar--%>
+
             <div class="container-fluid box">
-                <%-- for sliding movies --%>
+                <%-- for movies cards--%>
                 <div class="container-fluid">
                     <div class="row">
                         <%for (int i = 0; i < 4; i++)
@@ -82,12 +85,13 @@
                         <h2><strong>New Movies Spotlight</strong></h2>
                     </div>
                     <%--  --%>
+                    <%--tabs--%>
                     <ul class="nav nav-tabs" style="padding: 20px 0px 0px">
                         <li role="presentation" class="active"><a href="#latest" data-toggle="tab">Currently Popular</a></li>
                         <li role="presentation"><a href="#comingsoon" data-toggle="tab">Coming Soon</a></li>
 
                     </ul>
-
+                    <%--  --%>
                     <%--tab content--%>
                     <div class="tab-content">
                         <%--add Popular tab content--%>
@@ -127,20 +131,19 @@
                                 </div>
                                 <% } %>
                             </div>
-
                         </div>
                         <%--wrap coming soon content--%>
                     </div>
                     <%--wrap tab content--%>
                 </div>
             </div>
-        </div>
-    </div>
+        </div> <%--wrap second white background--%>
+    </div><%-- wrap background--%>
 
+    <%--for movie synopsis contents--%>
     <div style='display: none'>
         <% foreach (var j in Jtoken)
            {%>
-
         <div class="row tab" id="<%=j["id"] %>">
             <div class="col-md-4">
                 <img src="https://image.tmdb.org/t/p/w780<%=j["poster_path"] %>" class="img-responsive" style="align-content: center; padding: 30px 0px 0px">
@@ -163,7 +166,6 @@
 
         <% foreach (var p in popular)
            {%>
-
         <div class="row tab" id="<%=p["id"] %>">
             <div class="col-md-4">
                 <img src="https://image.tmdb.org/t/p/w780<%=p["poster_path"] %>" class="img-responsive" style="align-content: center; padding: 30px 0px 0px">
