@@ -28,7 +28,7 @@
 
         $(document).ready(function () {
             jQuery(".youtube").colorbox({ iframe: true, innerWidth: 640, innerHeight: 390 });
-            jQuery(".inline").colorbox({ inline: true, width: "50%" });
+            jQuery(".inline").colorbox({ inline: true, width: "75%" });
         });
     </script>
     <%--background--%>
@@ -55,7 +55,8 @@
                     </div>
                     <!--/.nav-collapse -->
                 </div>
-            </nav> <%--wrap navigation bar--%>
+            </nav>
+            <%--wrap navigation bar--%>
 
             <div class="container-fluid box">
                 <%-- for movies cards--%>
@@ -137,28 +138,30 @@
                     <%--wrap tab content--%>
                 </div>
             </div>
-        </div> <%--wrap second white background--%>
-    </div><%-- wrap background--%>
+        </div>
+        <%--wrap second white background--%>
+    </div>
+    <%-- wrap background--%>
 
     <%--for movie synopsis contents--%>
     <div style='display: none'>
         <% foreach (var j in Jtoken)
            {%>
-        <div class="row tab" id="<%=j["id"] %>">
+        <div class="row tab" id="<%=j["id"] %>" style="background-image: url('https://image.tmdb.org/t/p/w780<%=j["backdrop_path"]%>');">
             <div class="col-md-4">
-                <img src="https://image.tmdb.org/t/p/w780<%=j["poster_path"] %>" class="img-responsive" style="align-content: center; padding: 30px 0px 0px">
+                <img src="https://image.tmdb.org/t/p/w780<%=j["poster_path"] %>" class="img-responsive poster">
             </div>
-            <div class="col-md-8" style="padding: -10px 0px 0px 0px">
-
+            <div class="col-md-8 synbox">
                 <div class="page-header">
-                    <h2 style="color: black"><strong><%=j["title"] %></strong></h2>
+                    <h2 class="textshade"><strong><%=j["title"] %></strong></h2>
                 </div>
-                <p class="date">
+
+                <p class="date textshade">
                     <em>Release Date: <%=j["release_date"]%></em><br />
                 </p>
-                <p class="overview"><%=j["overview"]%></p>
+                <p class="overview textshade"><%=j["overview"]%></p>
                 <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/<%=j["videourl"] %>?html5=1"></iframe>
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<%=j["videourl"] %>?html5=1"></iframe>
                 </div>
             </div>
         </div>
@@ -166,21 +169,21 @@
 
         <% foreach (var p in popular)
            {%>
-        <div class="row tab" id="<%=p["id"] %>">
+        <div class="row tab" id="<%=p["id"] %>" style="background-image: url('https://image.tmdb.org/t/p/w780<%=p["backdrop_path"]%>');">
             <div class="col-md-4">
-                <img src="https://image.tmdb.org/t/p/w780<%=p["poster_path"] %>" class="img-responsive" style="align-content: center; padding: 30px 0px 0px">
+                <img src="https://image.tmdb.org/t/p/w780<%=p["poster_path"] %>" class="img-responsive poster">
             </div>
-            <div class="col-md-8" style="padding: -10px 0px 0px 0px">
+            <div class="col-md-8 synbox">
                 <div class="page-header">
-                    <h2 style="color: black"><strong><%=p["title"] %></strong></h2>
+                    <h2 class="textshade"><strong><%=p["title"] %></strong></h2>
                 </div>
 
-                <p class="date">
+                <p class="date textshade">
                     <em>Release Date: <%=p["release_date"]%></em><br />
                 </p>
-                <p class="overview"><%=p["overview"]%></p>
+                <p class="overview textshade"><%=p["overview"]%></p>
                 <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/<%=p["videourl"] %>?html5=1"></iframe>
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<%=p["videourl"] %>?html5=1"></iframe>
                 </div>
             </div>
         </div>

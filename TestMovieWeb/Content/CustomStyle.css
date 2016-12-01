@@ -17,9 +17,10 @@
 }
 
 .tab {
-    color: #ffffff;
-    margin: 15px;
     text-align: Left;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    
     
 }
 .nomargin{
@@ -139,4 +140,22 @@ transition-delay:.2s;
 .box {
     background-color: white;   
     padding: 0px;
+}
+
+.poster{
+    align-content: center; 
+    padding: 0px;
+    margin:  30px 0px 0px;
+    box-shadow: 5px 5px 10px black;
+}
+
+.synbox{
+    background-color: rgba(255,255,255,0.1);
+    margin: 0px 0px 2%;
+    box-shadow: 5px 5px 10px black;
+}
+
+.textshade{
+    color: white;
+    text-shadow: 0 0 15px black;
 }
